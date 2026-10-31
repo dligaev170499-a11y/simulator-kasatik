@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Симулятор Лёхи</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧔</text></svg>" />
+    <script type="module" crossorigin src="./assets/index-7GXVvSUQ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C13xs3SY.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- слой для облачка речи: над игровым интерфейсом, но под окнами -->
+    <div id="bubble-layer"></div>
+    <!-- ?fresh — начать как в первый раз: стереть сохранение, настройки, ачивки и рекорды (до загрузки игры) -->
+    <script>
+      if (new URLSearchParams(location.search).has('fresh')) {
+        localStorage.removeItem('lekha-save-v1');
+        localStorage.removeItem('lekha-settings-v1');
+        localStorage.removeItem('lekha-meta-v1');
+        history.replaceState(null, '', location.pathname);
+      }
+    </script>
+  </body>
+</html>
